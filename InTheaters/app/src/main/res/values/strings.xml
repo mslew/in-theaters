@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">In Theaters</string>
+    <string name="data_provided_by_imdb">Data Provided by IMDb</string>
+    <string name="welcome_text">In Theaters</string>
+    <string name="movie_poster_str">Movie Poster</string>
+    <string name="buy_tickets">Buy Tickets!</string>
+</resources>
