@@ -47,6 +47,10 @@ public class Movie implements Parcelable {
         stars = parcel.readString();
     }
 
+    public Movie(String movieName){
+        this.movieName = movieName;
+    }
+
     public String getMovieName() {
         return movieName;
     }

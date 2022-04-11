@@ -23,8 +23,8 @@ public class MovieFetcher {
         void onErrorResponse(VolleyError error);
     }
 
-    private final String BASE_URL = "https://imdb-api.com/en/API/InTheaters";
-    private final String API_KEY = "k_fsutp3ea";
+    private final String BASE_URL = "https://imdb-api.com/en/API/InTheaters/k_fsutp3ea";
+    //private final String API_KEY = "k_fsutp3ea";
     private final String TAG = MovieFetcher.class.getSimpleName();
     private final RequestQueue mRequestQueue;
 
@@ -32,10 +32,8 @@ public class MovieFetcher {
         mRequestQueue = Volley.newRequestQueue(context);
     }
 
-    public void FetchMovies(final OnMoviesReceivedListener listener){
-        String url = Uri.parse(BASE_URL).buildUpon()
-                .appendQueryParameter("api-key", API_KEY)
-                .build().toString();
+    public void fetchMovies(final OnMoviesReceivedListener listener){
+        String url = Uri.parse(BASE_URL).buildUpon().build().toString();
 
         Log.d(TAG, url.toString());
 
@@ -44,7 +42,7 @@ public class MovieFetcher {
                     @Override
                     public void onResponse(JSONObject response) {
                         try{
-                            Thread.sleep(4000);
+                            Thread.sleep(100);
                         }catch (InterruptedException ex){
                             Log.d(TAG, toString());
                         }
