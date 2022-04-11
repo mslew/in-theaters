@@ -20,7 +20,6 @@ import java.net.URL;
 
 public class DetailActivity extends AppCompatActivity {
     private Movie mMovie;
-    private Button mTicketButton;
 
     @SuppressLint("SetTextI18n")
     @Override
