@@ -63,7 +63,9 @@ public class MovieFetcher {
     List<Movie> parseJsonMovies(JSONObject jsonObject){
          String movieName;
          String rating;
+         String posterFromJson;
          String poster;
+         String[] posterParts;
          String plot;
          String runtime;
          String director;
@@ -77,7 +79,9 @@ public class MovieFetcher {
                 JSONObject movieObject = movieList.getJSONObject(i);
                 movieName = movieObject.getString("title");
                 rating = movieObject.getString("contentRating");
-                poster = movieObject.getString("image");
+                posterFromJson = movieObject.getString("image");
+                posterParts = posterFromJson.split("[,]", 0);
+                poster = posterParts[0];
                 plot = movieObject.getString("plot");
                 runtime = movieObject.getString("runtimeStr");
                 director = movieObject.getString("directors");
