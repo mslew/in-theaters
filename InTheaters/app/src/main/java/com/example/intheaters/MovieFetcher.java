@@ -17,7 +17,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class grabs the movies from the IMDb API.
+ */
 public class MovieFetcher {
+
+    /**
+     * Define the interface for the movies received
+     */
     public interface OnMoviesReceivedListener{
         void onMoviesReceived(List<Movie> movies);
         void onErrorResponse(VolleyError error);
@@ -28,10 +35,17 @@ public class MovieFetcher {
     private final String TAG = MovieFetcher.class.getSimpleName();
     private final RequestQueue mRequestQueue;
 
+    /**
+     * Define the requestQueue
+     */
     public MovieFetcher(Context context){
         mRequestQueue = Volley.newRequestQueue(context);
     }
 
+    /**
+     * Fetch the movies from API
+     * Use the URL defined above
+     */
     public void fetchMovies(final OnMoviesReceivedListener listener){
         String url = Uri.parse(BASE_URL).buildUpon().build().toString();
 
@@ -60,6 +74,12 @@ public class MovieFetcher {
         mRequestQueue.add(request);
     }
 
+    /**
+     * Parse through the JSON data.
+     * The data is first declared to be a
+     * jsonobject, then an array of items.
+     * Grab each item and create a new movie
+     */
     List<Movie> parseJsonMovies(JSONObject jsonObject){
          String movieName;
          String rating;

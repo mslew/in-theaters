@@ -18,9 +18,18 @@ import com.squareup.picasso.Picasso;
 
 import java.net.URL;
 
+/**
+ * This is the activity when the user clicks a movie they want to see.
+ * It hosts the data inside the Movie model class.
+ */
 public class DetailActivity extends AppCompatActivity {
     private Movie mMovie;
 
+    /**
+     * Grabs the intent from the previous activity
+     * and populates the various fields with the information.
+     * @param savedInstanceState
+     */
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -43,7 +52,7 @@ public class DetailActivity extends AppCompatActivity {
             Picasso
                     .get()
                     .load(mMovie.getPoster())
-                    .resize(300, 400)
+                    .resize(275, 400)
                     .onlyScaleDown()
                     .into(poster);
 
@@ -64,6 +73,11 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This class is the Listener for the ticket button.
+     * It will make an intent to chrome to search for the
+     * tickets for the movie.
+     */
     private class TicketButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {

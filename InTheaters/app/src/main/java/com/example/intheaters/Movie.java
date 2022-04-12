@@ -3,6 +3,9 @@ package com.example.intheaters;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Model class. This holds the data for every movie.
+ */
 public class Movie implements Parcelable {
     private String movieName;
     private String rating;

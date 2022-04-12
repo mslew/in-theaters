@@ -12,7 +12,16 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
 
+/**
+ * Class for the settings activity
+ * Allows for the user to change to darkmode
+ */
 public class SettingsActivity extends AppCompatActivity {
+
+    /**
+     * Create the layout.
+     * Also check if the dark theme is checked or not
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -37,6 +46,9 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Create preferences and grab theme preference
+     */
     public static class SettingsFragment extends PreferenceFragmentCompat{
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey){
