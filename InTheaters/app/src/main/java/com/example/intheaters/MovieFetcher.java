@@ -30,8 +30,7 @@ public class MovieFetcher {
         void onErrorResponse(VolleyError error);
     }
 
-    private final String BASE_URL = "https://imdb-api.com/en/API/InTheaters/k_fsutp3ea";
-    //private final String API_KEY = "k_fsutp3ea";
+    private final String BASE_URL = "https://imdb-api.com/en/API/InTheaters/k_fsutp3ea"; //my api link with key at end.
     private final String TAG = MovieFetcher.class.getSimpleName();
     private final RequestQueue mRequestQueue;
 
