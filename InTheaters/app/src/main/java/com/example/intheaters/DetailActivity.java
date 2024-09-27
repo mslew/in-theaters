@@ -45,9 +45,6 @@ public class DetailActivity extends AppCompatActivity {
             TextView movieName = findViewById(R.id.movie);
             movieName.setText(mMovie.getMovieName());
 
-            TextView rating = findViewById(R.id.rating);
-            rating.setText(mMovie.getRating());
-
             ImageView poster = findViewById(R.id.image_view);
             Picasso
                     .get()
@@ -58,18 +55,6 @@ public class DetailActivity extends AppCompatActivity {
 
             TextView plot = findViewById(R.id.plot_textview);
             plot.setText(mMovie.getPlot());
-
-            TextView runtime = findViewById(R.id.runtime_textview);
-            runtime.setText(mMovie.getRuntime());
-
-            TextView director = findViewById(R.id.director_textview);
-            director.setText(getString(R.string.director_textview_text) + mMovie.getDirector());
-
-            TextView genres = findViewById(R.id.genres_textview);
-            genres.setText(getString(R.string.genre_textview_text)+ mMovie.getGenres());
-
-            TextView stars = findViewById(R.id.stars_textview);
-            stars.setText(getString(R.string.stars_textview_text) + mMovie.getStars());
         }
     }
 

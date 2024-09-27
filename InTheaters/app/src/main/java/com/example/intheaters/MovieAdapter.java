@@ -48,9 +48,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(@NonNull MovieAdapter.MovieViewHolder holder, int position) {
         Movie movie = movies.get(position);
         String movieName = movie.getMovieName();
-        String rating = movie.getRating();
         holder.movieNameTextView.setText(movieName);
-        holder.ratingTextView.setText(rating);
     }
 
     /**
@@ -77,7 +75,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
      */
     protected class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final TextView movieNameTextView;
-        private final TextView ratingTextView;
 
         /**
          * Sets onClickListener
@@ -85,7 +82,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         public MovieViewHolder(View itemView){
             super(itemView);
             movieNameTextView = itemView.findViewById(R.id.movie_text_view);
-            ratingTextView = itemView.findViewById(R.id.movie_rating_view);
             itemView.setOnClickListener(this);
         }
 
